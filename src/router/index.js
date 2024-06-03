@@ -11,12 +11,18 @@ const router = createRouter({
     {
       path: "/mycounter",
       name: "counter",
-      component: () => import("../components/MyCounter.vue"),
+      component: () => import("../modules/mycounter/components/MyCounter.vue"),
     },
     {
       path: "/things-to-do",
       name: "ThingsToDo",
-      component: () => import("../components/ThingsToDo.vue"),
+      component: () =>
+        import("../modules/thingsToDo/components/ThingsToDo.vue"),
+    },
+    {
+      path: "/register",
+      name: "register",
+      component: () => import("../modules/record/views/RecordView.vue"),
     },
   ],
 });
