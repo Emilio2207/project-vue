@@ -8,6 +8,7 @@
       <div class="form">
         <label for="name">Name:</label>
         <Field
+          v-model="name"
           type="text"
           name="name"
           id="name"
@@ -18,6 +19,7 @@
       <div class="form">
         <label for="email">Email:</label>
         <Field
+          v-model="email"
           type="email"
           name="email"
           id="email"
@@ -35,8 +37,16 @@
 <script setup>
 import { Form, Field, ErrorMessage } from "vee-validate";
 import { schema } from "../schemas/validationSchema.js";
+import { useRegisterStore } from "../stores/registerStore.js";
+import { ref } from "vue";
+
+const registerStore = useRegisterStore();
+
+const name = ref("");
+const email = ref("");
 
 const onSubmit = () => {
+  registerStore.saveRecord(name.value, email.value);
   console.log("Submitted Form");
 };
 </script>
