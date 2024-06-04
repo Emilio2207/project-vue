@@ -7,6 +7,7 @@
       <li><router-link to="/mycounter">Counter</router-link></li>
       <li><router-link to="/things-to-do">Things to Do</router-link></li>
       <li><router-link to="/register">Register</router-link></li>
+      <li><router-link to="/calculate">Calculate</router-link></li>
     </ul>
   </div>
 </template>
